@@ -2,21 +2,23 @@
 
 int delete_element(server_db **head, int sock)
 {
+	//Assigning the head value to a temporary pointer variable
+	server_db *temp  = *head;
+	server_db *past = NULL;
 /*	//Check if list is empty
 	if (*head == NULL)
 	{
 		return LIST_EMPTY;
-	}
+	}*/
 
 	//Check for first node
-	if ((*head)->data == n_data)
+	if ((*head)->cl_num == sock)
 	{
-		return delete_first(head);
+		*head = temp -> link;
+		free(temp);
+		return SUCCESS;
 	}
-*/	
-	//Assigning the head value to a temporary pointer variable
-	server_db *temp  = *head;
-	server_db *past = NULL;
+
 
 	//Traversing till n_data is reached
 	while (temp)

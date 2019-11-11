@@ -22,7 +22,9 @@ void *recvmg(void *client_sock)
 			if(name != NULL)
 			{
 				strcpy(user, name->username);
-				strcat(user, ":");
+				len = strlen(user);
+				user[len-1]=':';
+				//strcat(user, ":");
 				strcat(user, msg);
 			}
 			//	lenn = strlen(user);

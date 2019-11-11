@@ -29,7 +29,7 @@ int main(){
     sock = socket( AF_INET, SOCK_STREAM,0);
     ServerIp.sin_port = htons(1234);
     ServerIp.sin_family= AF_INET;
-    ServerIp.sin_addr.s_addr = inet_addr("192.168.43.96");
+    ServerIp.sin_addr.s_addr = inet_addr("192.168.43.207");
     if( (connect( sock ,(struct sockaddr *)&ServerIp,sizeof(ServerIp))) == -1 )
         printf("\n connection to socket failed \n");
 	
